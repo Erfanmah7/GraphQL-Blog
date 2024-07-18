@@ -3,17 +3,19 @@ import React from "react";
 
 function Footer() {
   return (
-    <Typography
-      component="p"
-      variant="p"
-      bgcolor="#f7f7f7"
-      color="primary"
-      padding="10px"
-      textAlign="center"
-      mt={10}
-    >
-      development by erfan
-    </Typography>
+    <footer>
+      <Typography
+        component="p"
+        variant="p"
+        bgcolor="#f7f7f7"
+        color="primary"
+        padding="10px"
+        textAlign="center"
+        mt={10}
+      >
+       طراحی شده با عشق ❤️
+      </Typography>
+    </footer>
   );
 }
 
