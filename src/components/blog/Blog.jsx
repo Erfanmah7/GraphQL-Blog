@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import React from "react";
-import { GET_POSTS } from "../../graphql/query";
+import { GET_POSTS } from "../../graphql/queries";
 import { Grid } from "@mui/material";
 import CardEl from "../shared/CardEl";
 
