@@ -5,6 +5,7 @@ import sanitizeHtml from "sanitize-html";
 import { GET_AUTHOR } from "../../graphql/queries";
 import { Avatar, Container, Grid, Typography } from "@mui/material";
 import Loader from "../shared/Loader";
+import CardEl from "../shared/CardEl";
 
 function AuthorPage() {
   const { slug } = useParams();
@@ -35,12 +36,29 @@ function AuthorPage() {
           <Typography component="p" variant="h5" color="text.secondary">
             {author.field}
           </Typography>
-          <Grid item xs={12}>
+          <Grid item xs={12} mt={5}>
             <div
+              style={{ textAlign: "justify", textAlignLast: "center" }}
               dangerouslySetInnerHTML={{
                 __html: sanitizeHtml(author.description.html),
               }}
             ></div>
+          </Grid>
+          <Grid item xs={12} mt={6}>
+            <Typography component="h3" variant="h5" fontWeight={700}>
+              مقالات {author.name}
+            </Typography>
+          </Grid>
+          <Grid container spacing={2}>
+            {author.posts.map((post) => (
+              <Grid item xs={12} sm={6} md={4} mt={6} key={post.id}>
+                <CardEl
+                  title={post.title}
+                  slug={post.slug}
+                  coverPhoto={post.coverPhoto}
+                />
+              </Grid>
+            ))}
           </Grid>
         </Grid>
       </Grid>

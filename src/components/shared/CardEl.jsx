@@ -16,14 +16,17 @@ function CardEl({ title, slug, coverPhoto, author }) {
   return (
     <>
       <Card sx={{ boxShadow: "rgba(0,0,0,0.1)0px 4px 12px", borderRadius: 4 }}>
-        <CardHeader
-          avatar={<Avatar src={author.avator.url} sx={{ marginLeft: 2 }} />}
-          title={
-            <Typography component="p" variant="p" color="text.secondary">
-              {author.name}
-            </Typography>
-          }
-        />
+        {author && (
+          <CardHeader
+            avatar={<Avatar src={author.avator.url} sx={{ marginLeft: 2 }} />}
+            title={
+              <Typography component="p" variant="p" color="text.secondary">
+                {author.name}
+              </Typography>
+            }
+          />
+        )}
+
         <CardMedia
           component="img"
           image={coverPhoto.url}

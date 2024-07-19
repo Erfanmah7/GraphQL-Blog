@@ -44,13 +44,13 @@ const GET_AUTHOR = gql`
       description {
         html
       }
-    }
-    posts {
-      slug
-      title
-      id
-      coverPhoto {
-        url
+      posts {
+        coverPhoto {
+          url
+        }
+        id
+        slug
+        title
       }
     }
   }
