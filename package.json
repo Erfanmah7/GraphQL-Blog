@@ -18,7 +18,10 @@
     "graphql": "^16.9.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.25.1"
+    "react-loader-spinner": "^6.1.6",
+    "react-router-dom": "^6.25.1",
+    "sanitize": "^2.1.2",
+    "sanitize-html": "^2.13.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
