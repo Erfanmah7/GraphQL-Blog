@@ -15,7 +15,9 @@ function AuthorPage() {
 
   if (loading) return <Loader />;
   if (errors) return <h3>error...</h3>;
-  const { author } = data;
+  const {
+    author: { name, field, description, avator, posts },
+  } = data;
   console.log(data);
   return (
     <Container maxWidth="lg">
@@ -29,28 +31,28 @@ function AuthorPage() {
             alignItems: "center",
           }}
         >
-          <Avatar src={author.avator.url} sx={{ width: 250, height: 250 }} />
+          <Avatar src={avator.url} sx={{ width: 250, height: 250 }} />
           <Typography component="h3" variant="h5" fontWeight={700} mt={4}>
-            {author.name}
+            {name}
           </Typography>
           <Typography component="p" variant="h5" color="text.secondary">
-            {author.field}
+            {field}
           </Typography>
           <Grid item xs={12} mt={5}>
             <div
               style={{ textAlign: "justify", textAlignLast: "center" }}
               dangerouslySetInnerHTML={{
-                __html: sanitizeHtml(author.description.html),
+                __html: sanitizeHtml(description.html),
               }}
             ></div>
           </Grid>
           <Grid item xs={12} mt={6}>
             <Typography component="h3" variant="h5" fontWeight={700}>
-              مقالات {author.name}
+              مقالات {name}
             </Typography>
           </Grid>
           <Grid container spacing={2}>
-            {author.posts.map((post) => (
+            {posts.map((post) => (
               <Grid item xs={12} sm={6} md={4} mt={6} key={post.id}>
                 <CardEl
                   title={post.title}
