@@ -11,9 +11,9 @@ function Footer() {
         color="primary"
         padding="10px"
         textAlign="center"
-        mt={10}
+        mt={27}
       >
-       طراحی شده با عشق ❤️
+        طراحی شده با عشق ❤️
       </Typography>
     </footer>
   );
