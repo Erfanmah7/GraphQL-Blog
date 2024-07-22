@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 const client = new ApolloClient({
-  uri: import.meta.env.VITE_REACT_APP_GRAPHCMS_URI,
+  uri: import.meta.env.VITE_APP_GRAPHCMS_URI,
   cache: new InMemoryCache(),
 });
 
