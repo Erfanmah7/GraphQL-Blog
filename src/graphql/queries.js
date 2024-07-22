@@ -56,4 +56,25 @@ const GET_AUTHOR = gql`
   }
 `;
 
-export { GET_POSTS, GET_AUTHORS, GET_AUTHOR };
+const GET_POST = gql`
+  query getPost($slug: String!) {
+    post(where: { slug: $slug }) {
+      title
+      coverPhoto {
+        url
+      }
+      content {
+        html
+      }
+      author {
+        avator {
+          url
+        }
+        field
+        name
+      }
+    }
+  }
+`;
+
+export { GET_POSTS, GET_AUTHORS, GET_AUTHOR, GET_POST };
